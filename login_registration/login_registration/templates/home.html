@@ -1,0 +1,12 @@
+{%extends "base.html"%}
+{%block start%}
+{% if request.user.is_authenticated %}
+  <p>{{ request.user.username }}</p>
+  <a href="/api/logout">Logout</a>
+{% else %}
+  <a href="{/api/login}">Login</a>
+  <a href="/api/register">Signup</a>
+{% endif %}
+
+<h1>Welcome!</h1>
+{%endblock%}
